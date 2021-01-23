@@ -65,10 +65,10 @@ class Car {
    * не больше чем значение свойства maxSpeed
    */
   accelerate(value) {
-      
-        this.speed= this.speed+value;
-      }
-  
+       const resultSpeed =this.speed+value;
+       if (resultSpeed > this.maxSpeed) return;
+        this.speed= resultSpeed;
+  } 
 
   /*
    * Отнимает от свойства speed полученное значение,
@@ -87,7 +87,7 @@ class Car {
    */
   drive(hours) {
       if( this.isOn =true){
-          this.distance= this.distance+(hours *this.speed)
+          this.distance= this.distance+ (hours *this.speed)
       }
   }
 }
